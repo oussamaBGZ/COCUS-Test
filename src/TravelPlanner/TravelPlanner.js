@@ -32,7 +32,10 @@ export default class TravelPlanner extends HTMLElement {
 
     dateInput.addEventListener('date-chosen', (event) => {
       const chosenDate = event.detail.date;
-      const germanDate = new Date(chosenDate).toLocaleDateString('de-DE');
+
+      // Using toLocaleDateString is more flexible and reliable than manually formatting the date string, 
+      // as it handles different date formats, time zones, and locales.
+      const germanDate = new Date(chosenDate).toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit', year: 'numeric' });
       date.textContent = `Selected Date: ${germanDate}`;
     });
   }
