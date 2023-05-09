@@ -48,6 +48,7 @@ ul li:hover {
 small {
     display: none;
     margin-bottom:10px;
+    color:coral;
 }
 
 </style>
